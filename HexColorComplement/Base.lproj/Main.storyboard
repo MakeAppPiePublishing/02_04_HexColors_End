@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +14,76 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HexColorComplement" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Hex number here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8DM-PT-kzv">
+                                <rect key="frame" x="10" y="30" width="295.5" height="50"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gzy-fN-b6J">
+                                <rect key="frame" x="315.5" y="30" width="49.5" height="50"/>
+                                <color key="backgroundColor" red="0.21156577469999999" green="0.95742251330000006" blue="0.024932877950000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GiR-jz-c5T"/>
+                                </constraints>
+                                <state key="normal" title="Go">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="goButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IMx-e1-Yvj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfj-bd-OX7">
+                                <rect key="frame" x="10" y="100" width="355" height="268.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Color"/>
+                                <connections>
+                                    <action selector="newColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wRV-C0-NbB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSx-py-8RC">
+                                <rect key="frame" x="10" y="378.5" width="355" height="268.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Complement"/>
+                                <connections>
+                                    <action selector="newColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oae-K0-bXw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gzy-fN-b6J" firstAttribute="leading" secondItem="8DM-PT-kzv" secondAttribute="trailing" constant="10" id="1dE-ji-5Ke"/>
+                            <constraint firstItem="Gzy-fN-b6J" firstAttribute="height" secondItem="8DM-PT-kzv" secondAttribute="height" id="1eU-Vl-P1B"/>
+                            <constraint firstItem="vSx-py-8RC" firstAttribute="top" secondItem="Gfj-bd-OX7" secondAttribute="bottom" constant="10" id="6He-OJ-qyt"/>
+                            <constraint firstItem="vSx-py-8RC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="6dJ-bh-TSu"/>
+                            <constraint firstItem="Gzy-fN-b6J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="ApK-qE-sdE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vSx-py-8RC" secondAttribute="trailing" constant="10" id="CD1-Ng-mU4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gzy-fN-b6J" secondAttribute="trailing" constant="10" id="CKA-7g-mGG"/>
+                            <constraint firstItem="Gfj-bd-OX7" firstAttribute="height" secondItem="vSx-py-8RC" secondAttribute="height" id="JrT-7b-fe3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gfj-bd-OX7" secondAttribute="trailing" constant="10" id="U6C-uD-bmJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vSx-py-8RC" secondAttribute="bottom" constant="20" id="VvC-gV-dsx"/>
+                            <constraint firstItem="Gzy-fN-b6J" firstAttribute="width" secondItem="8DM-PT-kzv" secondAttribute="width" multiplier="1:6" id="dZu-eK-inf"/>
+                            <constraint firstItem="8DM-PT-kzv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="kJ0-5Z-DAp"/>
+                            <constraint firstItem="Gfj-bd-OX7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="lXa-XB-9f4"/>
+                            <constraint firstItem="8DM-PT-kzv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="sCo-fD-Tlq"/>
+                            <constraint firstItem="Gfj-bd-OX7" firstAttribute="top" secondItem="8DM-PT-kzv" secondAttribute="bottom" constant="20" id="wSk-AX-gNS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomButton" destination="vSx-py-8RC" id="oNQ-lp-71v"/>
+                        <outlet property="textField" destination="8DM-PT-kzv" id="pz4-qw-pQV"/>
+                        <outlet property="topButton" destination="Gfj-bd-OX7" id="xSa-A5-nUI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
         </scene>
     </scenes>
 </document>
